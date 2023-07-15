@@ -1,0 +1,22 @@
+name : Android CI
+
+on :
+  push :
+    branches:
+      - master
+  pull request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on : ubuntu-latest
+
+    steps:
+      - name : checkout code
+        uses: actions/checkout@v2
+
+      - name:  setup java
+        uses: actions/setup-java@v2
+        with:
+          java-version:17
